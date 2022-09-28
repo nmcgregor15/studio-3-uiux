@@ -26,14 +26,29 @@ const updatePage = async () => {
 
   // Make API request and get an array of fruit objects
   const fruitsArray = await apiRequest();
-  // console.log(fruitsArray);
+  console.log(fruitsArray);
 
   // TODO: Use either `map` and/or `filter` to extract some data from the array of fruit objects
   // For example, find "name of all fruits whose sugar > 15",
+  const fruitsL = fruitsArray.filter(fruit => fruit.name.includes('L'));
+  const fruitMap = fruitsL.map(fruit => fruit.name);
+  
+  const newElement = document.createElement('p');
+  newElement.innerHTML = "Fruits that start with L" + fruitMap;
+
+  gallery.append(newElement);
+
+
+
 
   // TODO: Create a new HTML element to display your data
+  // const fruitElement = document.getElementById
+  // fruitsL.innerHTML = "Names of all Fruits with letter L"
 
   // TODO: Append your new element to the page
+  
+
+
 
 }
 
